@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using MixdTape.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace Texter
+namespace MixdTape
 {
     public class Startup
     {
@@ -23,30 +20,27 @@ namespace Texter
                 .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
             services.AddEntityFramework()
-              .AddDbContext<TexterContext>(options =>
-                  options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+                .AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
+            app.UseIdentity();
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
-
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Account}/{action=Index}/{id?}");
             });
-
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
