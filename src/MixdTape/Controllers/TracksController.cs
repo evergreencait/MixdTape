@@ -27,6 +27,17 @@ namespace MixdTape.Controllers
             return View(_db.Tracks.ToList());
         }
 
+        public IActionResult SearchTrack()
+        {
+            var allArtists = Track.GetTrack();
+            return View(allArtists);
+        }
+
+        public IActionResult GetTrack()
+        {
+            return View(_db.Tracks.ToList());
+        }
+
     }
 
 }

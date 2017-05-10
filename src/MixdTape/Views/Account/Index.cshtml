@@ -10,9 +10,16 @@
 @if (User.Identity.IsAuthenticated)
 {
     <p>Hello @User.Identity.Name!</p>
-}
-else
-{
+
+        @Html.ActionLink("View all Searched Artists", "GetTrack")
+        <br />
+        @Html.ActionLink("Search for a new artist based on track", "SearchTrack")
+        <br />
+        <br />
+        
+        }
+        else
+        {
     <p>@Html.ActionLink("Register", "Register")</p>
     <p>@Html.ActionLink("Log in", "Login")</p>
 }

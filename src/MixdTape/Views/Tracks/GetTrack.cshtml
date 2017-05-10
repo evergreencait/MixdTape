@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Get Track";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<MixdTape.Models.Track>
+
+<h2>Artist</h2>
+<hr />
+<ol>
+    @foreach (var track in Model)
+    {
+        <li>
+            <ul>
+                <li>To: @Html.DisplayFor(modelItem => track.Artist)</li>
+            </ul>
+        </li>
+    }
+</ol>
+
+@Html.ActionLink("Back home", "Index")
