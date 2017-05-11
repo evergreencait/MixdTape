@@ -21,7 +21,7 @@ namespace MixdTape.Models
 
         public static List<Artist> GetArtists()
         {
-            var client = new RestClient("http://api.musicgraph.com/api/v2/artist/search?api_key=" + EnvironmentVariables.MusicGraphKey + "&similar_to=" + "Pearl+Jam");
+            var client = new RestClient("http://api.musicgraph.com/api/v2/artist/search?api_key=" + EnvironmentVariables.MusicGraphKey + "&similar_to=" + "Train");
             var request = new RestRequest("", Method.GET);
             Console.WriteLine(request);
             var response = new RestResponse();
@@ -31,7 +31,9 @@ namespace MixdTape.Models
             }).Wait();
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             Console.WriteLine(jsonResponse);
-            var artistList = JsonConvert.DeserializeObject<List<Artist>>(jsonResponse["data"][0].ToString());
+            string jsonOutput = jsonResponse["data"].ToString();
+            var artistList = JsonConvert.DeserializeObject<List<Artist>>(jsonOutput);
+            Console.WriteLine(artistList[0].Name);
             return artistList;
         }
 

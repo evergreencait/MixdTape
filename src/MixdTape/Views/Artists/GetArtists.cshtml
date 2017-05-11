@@ -8,17 +8,16 @@
 
 <h2>Artist</h2>
 <hr />
-@*<ol>
+<ol>
     @foreach (var artist in Model)
     {
         <li>
             <ul>
-                <li>To: @Html.DisplayFor(modelItem => artist.Track)</li>
+                <li>To: @Html.DisplayFor(modelItem => artist.Name)</li>
             </ul>
         </li>
     }
-</ol>*@
+</ol>
 
-<h4>@Html.DisplayFor(modelItem => Model)</h4>
 
 @Html.ActionLink("Back home", "Index")
