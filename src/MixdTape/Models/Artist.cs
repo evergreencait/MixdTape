@@ -19,9 +19,9 @@ namespace MixdTape.Models
         public ICollection<PlaylistsTracks> PlaylistsTracks { get; set; }
         public virtual ApplicationUser User { get; set; }
 
-        public static List<Artist> GetArtists()
+        public static List<Artist> GetArtists(string artist)
         {
-            var client = new RestClient("http://ws.audioscrobbler.com//2.0/?method=artist.getsimilar&artist=nirvana&api_key=" + EnvironmentVariables.LastFmKey + "&format=json");
+            var client = new RestClient("http://ws.audioscrobbler.com//2.0/?method=artist.getsimilar&artist=" + artist + "&api_key=" + EnvironmentVariables.LastFmKey + "&format=json");
             var request = new RestRequest("", Method.GET);
             Console.WriteLine(request);
             var response = new RestResponse();

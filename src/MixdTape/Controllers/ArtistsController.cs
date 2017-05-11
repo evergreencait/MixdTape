@@ -21,16 +21,15 @@ namespace MixdTape.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+       public IActionResult Index()
         {
-
-            return View(_db.Artists.ToList());
+            return View();
         }
 
-        public IActionResult GetArtists()
+        public IActionResult GetArtists(string searchedArtist)
         {
-            var allArtists = Artist.GetArtists();
-            return View(allArtists);
+            var allArtists = Artist.GetArtists(searchedArtist);
+            return Json(allArtists);
         }
 
     }
