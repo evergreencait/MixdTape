@@ -9,20 +9,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MixdTape.Models
 {
-    [Table("Tracks")]
-    public class Track
+    [Table("Artists")]
+    public class Artist
     {
-        public int TrackId { get; set; }
+        public int ArtistId { get; set; }
         public string Name { get; set; }
-        public string Artist { get; set; }
-        public int Length { get; set; }
+        public string Track { get; set; }
 
         public ICollection<PlaylistsTracks> PlaylistsTracks { get; set; }
         public virtual ApplicationUser User { get; set; }
 
-        public static List<String> GetTrack()
+        public static List<Artist> GetArtists()
         {
-            var client = new RestClient("https://api.spotify.com/v1/artists/43ZHCT0cAZBISjO8DG9PnE/related-artists");
+            var client = new RestClient("http://api.musicgraph.com/api/v2/artist/search?api_key=" + EnvironmentVariables.MusicGraphKey + "&similar_to=" + "Pearl+Jam");
             var request = new RestRequest("", Method.GET);
             Console.WriteLine(request);
             var response = new RestResponse();
@@ -32,8 +31,8 @@ namespace MixdTape.Models
             }).Wait();
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             Console.WriteLine(jsonResponse);
-            var messageList = JsonConvert.DeserializeObject<List<String>>(jsonResponse["genres"].ToString());
-            return messageList;
+            var artistList = JsonConvert.DeserializeObject<List<Artist>>(jsonResponse["data"][0].ToString());
+            return artistList;
         }
 
     

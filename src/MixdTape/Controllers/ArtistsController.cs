@@ -10,12 +10,12 @@ using Microsoft.EntityFrameworkCore;
 namespace MixdTape.Controllers
 {
     [Authorize]
-    public class TracksController : Controller
+    public class ArtistsController : Controller
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public TracksController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+        public ArtistsController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
         {
             _userManager = userManager;
             _db = db;
@@ -24,18 +24,13 @@ namespace MixdTape.Controllers
         public IActionResult Index()
         {
 
-            return View(_db.Tracks.ToList());
+            return View(_db.Artists.ToList());
         }
 
-        public IActionResult SearchTrack()
+        public IActionResult GetArtists()
         {
-            var allArtists = Track.GetTrack();
+            var allArtists = Artist.GetArtists();
             return View(allArtists);
-        }
-
-        public IActionResult GetTrack()
-        {
-            return View(_db.Tracks.ToList());
         }
 
     }

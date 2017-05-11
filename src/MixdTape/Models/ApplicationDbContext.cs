@@ -6,7 +6,7 @@ namespace MixdTape.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Playlist> Playlists { get; set; }
-        public DbSet<Track> Tracks { get; set; }
+        public DbSet<Artist> Artists { get; set; }
         public DbSet<PlaylistsTracks> PlaylistsTracks { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
@@ -20,7 +20,7 @@ namespace MixdTape.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PlaylistsTracks>()
-                 .HasKey(t => new { t.PlaylistId, t.TrackId });
+                 .HasKey(t => new { t.PlaylistId, t.ArtistId });
 
             modelBuilder.Entity<PlaylistsTracks>()
                 .HasOne(pt => pt.Playlist)
@@ -28,9 +28,9 @@ namespace MixdTape.Models
                 .HasForeignKey(pt => pt.PlaylistId);
 
             modelBuilder.Entity<PlaylistsTracks>()
-               .HasOne(pt => pt.Track)
+               .HasOne(pt => pt.Artist)
                .WithMany(p => p.PlaylistsTracks)
-               .HasForeignKey(pt => pt.TrackId);
+               .HasForeignKey(pt => pt.ArtistId);
             base.OnModelCreating(modelBuilder);
         }
     }

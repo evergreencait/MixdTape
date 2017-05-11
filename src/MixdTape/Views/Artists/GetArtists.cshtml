@@ -4,19 +4,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model IEnumerable<MixdTape.Models.Track>
+@model IEnumerable<MixdTape.Models.Artist>
 
 <h2>Artist</h2>
 <hr />
-<ol>
-    @foreach (var track in Model)
+@*<ol>
+    @foreach (var artist in Model)
     {
         <li>
             <ul>
-                <li>To: @Html.DisplayFor(modelItem => track.Artist)</li>
+                <li>To: @Html.DisplayFor(modelItem => artist.Track)</li>
             </ul>
         </li>
     }
-</ol>
+</ol>*@
+
+<h4>@Html.DisplayFor(modelItem => Model)</h4>
 
 @Html.ActionLink("Back home", "Index")

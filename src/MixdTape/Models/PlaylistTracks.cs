@@ -15,7 +15,7 @@ namespace MixdTape.Models
 
         public virtual Playlist Playlist { get; set; }
 
-        public int TrackId { get; set; }
-        public virtual Track Track { get; set; }
+        public int ArtistId { get; set; }
+        public virtual Artist Artist { get; set; }
     }
 }
