@@ -37,7 +37,25 @@ namespace MixdTape.Models
             return artistList;
         }
 
-    
+        public static List<Artist> GetTracks(string secondArtist)
+        {
+            var client = new RestClient("http://www.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + secondArtist + "&api_key=" + EnvironmentVariables.LastFmKey + "&format=json");
+            var request = new RestRequest("", Method.GET);
+            Console.WriteLine(request);
+            var response = new RestResponse();
+            Task.Run(async () =>
+            {
+                response = await GetResponseContentAsync(client, request) as RestResponse;
+            }).Wait();
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            Console.WriteLine(jsonResponse);
+            string jsonOutput = jsonResponse["toptracks"]["track"].ToString();
+            var trackList = JsonConvert.DeserializeObject<List<Artist>>(jsonOutput);
+            Console.WriteLine(trackList[0].Name);
+            return trackList;
+        }
+
+
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
             var tcs = new TaskCompletionSource<IRestResponse>();
