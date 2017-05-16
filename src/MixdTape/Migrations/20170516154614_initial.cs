@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MixdTape.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -149,6 +149,27 @@ namespace MixdTape.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Artists",
+                columns: table => new
+                {
+                    ArtistId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Track = table.Column<string>(nullable: true),
+                    UserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Artists", x => x.ArtistId);
+                    table.ForeignKey(
+                        name: "FK_Artists_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Playlists",
                 columns: table => new
                 {
@@ -171,48 +192,26 @@ namespace MixdTape.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tracks",
-                columns: table => new
-                {
-                    TrackId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Artist = table.Column<string>(nullable: true),
-                    Length = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tracks", x => x.TrackId);
-                    table.ForeignKey(
-                        name: "FK_Tracks_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "PlaylistsTracks",
                 columns: table => new
                 {
                     PlaylistId = table.Column<int>(nullable: false),
-                    TrackId = table.Column<int>(nullable: false)
+                    ArtistId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PlaylistsTracks", x => new { x.PlaylistId, x.TrackId });
+                    table.PrimaryKey("PK_PlaylistsTracks", x => new { x.PlaylistId, x.ArtistId });
+                    table.ForeignKey(
+                        name: "FK_PlaylistsTracks_Artists_ArtistId",
+                        column: x => x.ArtistId,
+                        principalTable: "Artists",
+                        principalColumn: "ArtistId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PlaylistsTracks_Playlists_PlaylistId",
                         column: x => x.PlaylistId,
                         principalTable: "Playlists",
                         principalColumn: "PlaylistId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PlaylistsTracks_Tracks_TrackId",
-                        column: x => x.TrackId,
-                        principalTable: "Tracks",
-                        principalColumn: "TrackId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -258,24 +257,24 @@ namespace MixdTape.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Artists_UserId",
+                table: "Artists",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Playlists_UserId",
                 table: "Playlists",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_PlaylistsTracks_ArtistId",
+                table: "PlaylistsTracks",
+                column: "ArtistId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PlaylistsTracks_PlaylistId",
                 table: "PlaylistsTracks",
                 column: "PlaylistId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PlaylistsTracks_TrackId",
-                table: "PlaylistsTracks",
-                column: "TrackId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tracks_UserId",
-                table: "Tracks",
-                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -302,10 +301,10 @@ namespace MixdTape.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Playlists");
+                name: "Artists");
 
             migrationBuilder.DropTable(
-                name: "Tracks");
+                name: "Playlists");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

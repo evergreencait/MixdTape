@@ -11,11 +11,17 @@
                 for (var i = 0; i < artists.length; i++) {
                     $('#search-result').append('<p class="clickedArtist">' + artists[i].name + '</p>');
                 }
+                $(".clickedArtist").click(function () {
+                    console.log($(this).html());
+                });
+
             }
+
         });
     });
     $('.secondArtist').submit(function (event) {
         event.preventDefault();
+        console.log($(this).serialize());
         $.ajax({
             type: 'GET',
             datatype: 'json',

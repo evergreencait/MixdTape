@@ -8,8 +8,8 @@ using MixdTape.Models;
 namespace MixdTape.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170510173533_Initial")]
-    partial class Initial
+    [Migration("20170516154614_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -173,6 +173,24 @@ namespace MixdTape.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("MixdTape.Models.Artist", b =>
+                {
+                    b.Property<int>("ArtistId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Track");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("ArtistId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Artists");
+                });
+
             modelBuilder.Entity("MixdTape.Models.Playlist", b =>
                 {
                     b.Property<int>("PlaylistId")
@@ -197,35 +215,15 @@ namespace MixdTape.Migrations
                 {
                     b.Property<int>("PlaylistId");
 
-                    b.Property<int>("TrackId");
+                    b.Property<int>("ArtistId");
 
-                    b.HasKey("PlaylistId", "TrackId");
+                    b.HasKey("PlaylistId", "ArtistId");
+
+                    b.HasIndex("ArtistId");
 
                     b.HasIndex("PlaylistId");
 
-                    b.HasIndex("TrackId");
-
                     b.ToTable("PlaylistsTracks");
-                });
-
-            modelBuilder.Entity("MixdTape.Models.Track", b =>
-                {
-                    b.Property<int>("TrackId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Artist");
-
-                    b.Property<int>("Length");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("TrackId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Tracks");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -265,6 +263,13 @@ namespace MixdTape.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("MixdTape.Models.Artist", b =>
+                {
+                    b.HasOne("MixdTape.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("MixdTape.Models.Playlist", b =>
                 {
                     b.HasOne("MixdTape.Models.ApplicationUser", "User")
@@ -274,22 +279,15 @@ namespace MixdTape.Migrations
 
             modelBuilder.Entity("MixdTape.Models.PlaylistsTracks", b =>
                 {
+                    b.HasOne("MixdTape.Models.Artist", "Artist")
+                        .WithMany("PlaylistsTracks")
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("MixdTape.Models.Playlist", "Playlist")
                         .WithMany("PlaylistsTracks")
                         .HasForeignKey("PlaylistId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MixdTape.Models.Track", "Track")
-                        .WithMany("PlaylistsTracks")
-                        .HasForeignKey("TrackId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("MixdTape.Models.Track", b =>
-                {
-                    b.HasOne("MixdTape.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
         }
     }
