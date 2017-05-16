@@ -48,7 +48,7 @@ namespace MixdTape.Models
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            Console.WriteLine(jsonResponse);
+            Console.WriteLine("response " + jsonResponse);
             string jsonOutput = jsonResponse["toptracks"]["track"].ToString();
             var trackList = JsonConvert.DeserializeObject<List<Artist>>(jsonOutput);
             Console.WriteLine(trackList[0].Name);

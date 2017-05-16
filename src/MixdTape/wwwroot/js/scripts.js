@@ -13,25 +13,23 @@
                 }
                 $(".clickedArtist").click(function () {
                     console.log($(this).html());
+                    var artist = $(this).html();
+                    $.ajax({
+                        type: 'GET',
+                        datatype: 'json',
+                        data: { artist: artist },
+                        url: 'Artists/GetTracks',
+                        success: function (artist) {
+                            console.log(artist);
+                            for (var i = 0; i < artist.length; i++) {
+                                $('#track-result').append('<p>' + artist[i].name + '</p>');
+                            }
+                        }
+                    });
                 });
 
             }
 
         });
     });
-    $('.secondArtist').submit(function (event) {
-        event.preventDefault();
-        console.log($(this).serialize());
-        $.ajax({
-            type: 'GET',
-            datatype: 'json',
-            data: $(this).serialize(),
-            url: 'Artists/GetTracks',
-            success: function (tracks) {
-                for (var i = 0; i < tracks.length; i++) {
-                    $('#track-result').append('<p>' + tracks[i].name + '</p>');
-                }
-            }
-        });
-    })
 });

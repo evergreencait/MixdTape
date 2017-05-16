@@ -33,9 +33,9 @@ namespace MixdTape.Controllers
         }
 
 
-        public IActionResult GetTracks(string artist2)
+        public IActionResult GetTracks(string artist)
         {
-            var allTracks = Artist.GetTracks(artist2);
+            var allTracks = Artist.GetTracks(artist);
             return Json(allTracks);
         }
 
