@@ -4,12 +4,13 @@
 }
 
 @using System.Security.Claims
+<div class="loginbody">
 
-<h2>Authentication with Identity</h2>
-<hr />
-@if (User.Identity.IsAuthenticated)
-{
-    <p>Hello @User.Identity.Name!</p>
+
+</div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Hello @User.Identity.Name!</p>
 
         @Html.ActionLink("View all Searched Artists", "GetTrack")
         <br />
@@ -19,13 +20,16 @@
         @Html.ActionLink("ARTIST LIST (REMOVE ME)", "Index", "Artists")
 
         <br />
-        
-        }
-        else
-        {
-    <p>@Html.ActionLink("Register", "Register")</p>
-    <p>@Html.ActionLink("Log in", "Login")</p>
-}
+
+    }
+    else
+    {
+        <div class="login">
+            <p>@Html.ActionLink("Register", "Register")</p>
+            <p>@Html.ActionLink("Log in", "Login")</p>
+        </div>
+    }
+
 
 @if (User.Identity.IsAuthenticated)
 {
