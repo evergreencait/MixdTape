@@ -12,7 +12,6 @@
                     $('#search-result').append('<p class="clickedArtist">' + artists[i].name + '</p>');
                 }
                 $(".clickedArtist").click(function () {
-                    console.log($(this).html());
                     var artist = $(this).html();
                     $.ajax({
                         type: 'GET',
@@ -20,7 +19,7 @@
                         data: { artist: artist },
                         url: 'Artists/GetTracks',
                         success: function (artist) {
-                            console.log(artist);
+                            console.log("artist" + artist);
                             for (var i = 0; i < artist.length; i++) {
                                 $('#track-result').append('<p>' + artist[i].name + '</p>');
                             }
