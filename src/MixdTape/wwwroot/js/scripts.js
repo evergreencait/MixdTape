@@ -13,6 +13,7 @@
                 }
                 $(".clickedArtist").click(function () {
                     var artist = $(this).html();
+                    console.log("ARTIST" + artist)
                     $.ajax({
                         type: 'GET',
                         datatype: 'json',
