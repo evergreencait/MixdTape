@@ -44,3 +44,39 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 #search-result {
     background-color: red;
 }
+
+.list-group-item active {
+    background-color: black;
+    color: white;
+}
+
+.jumbotron{
+  position: relative;
+    overflow: hidden;
+    height: 500px;
+    background-color: white;
+ 
+  /* Tried setting the height. Didnt work either */
+  /* height: 200px; */
+}
+.container {
+  position: relative;
+  color: #ffffff;
+  z-index: 2
+}
+
+
+#video-background{ 
+  position: absolute;
+  height: auto;
+  width: auto;
+  min-height: 100%;
+  min-width: 90%;
+  left: 50%;
+  top: 50%;
+  background-size: contain !important;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+
