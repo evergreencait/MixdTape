@@ -53,7 +53,7 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 .jumbotron{
   position: relative;
     overflow: hidden;
-    height: 500px;
+    height: 600px;
     background-color: white;
  
   /* Tried setting the height. Didnt work either */
@@ -71,7 +71,7 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
   height: auto;
   width: auto;
   min-height: 100%;
-  min-width: 90%;
+  min-width: 100%;
   left: 50%;
   top: 50%;
   background-size: contain !important;
