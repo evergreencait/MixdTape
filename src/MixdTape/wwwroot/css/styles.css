@@ -1,7 +1,6 @@
 ﻿  .login {
     position: absolute;
     z-index: 1;
-    border: 3px solid white;
     margin-top: -900px;
     text-align: center;
     border-radius: 20%;
@@ -42,14 +41,24 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 #profile {
-    margin-left: 35%;
     font-size: 40px;
 
+}
+
+.profile-heading {
+    margin-left: 35%;
 }
 
 .list-group-item active {
     background-color: black;
     color: white;
+}
+
+#rock {
+    margin-left: 39%;
+    padding: 1%;
+    height: 200px;
+    border: 6px double purple;
 }
 
 .jumbotron{
@@ -68,12 +77,22 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 .hello {
-    margin-top: 200px;
+    margin-top: 100px;
+    margin-left: 10%;
     color: white;
     background: rgba(0, 0, 0, 0.3);
-    width: 45%;
-    border: 2px solid white;
+    width: 20%;
+    height: 80%;
     text-align: center;
+}
+
+#hello {
+    font-size: 40px;
+}
+
+#search {
+    text-align: center;
+    font-size: 40px;
 }
 
 

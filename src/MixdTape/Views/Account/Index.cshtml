@@ -69,11 +69,12 @@
                     <source src="~/img/concert.mp4"  type="video/ogg">
                 </video>
                 <div class="container hello">
-                    <h1>Hello, @User.Identity.Name!</h1>
+                    <h1 id="hello">Hello, @User.Identity.Name!</h1>
+                    <hr />
                 </div>
             </div>
             <div class="profile-heading">
-                <h3 id="profile">Your Profile</h3>
+                <h3 id="profile">Your Profile <img src="~/img/rockon2.png" alt="rock on hand signal" id="rock" /></h3>
                 <hr />
             </div>
 
@@ -153,7 +154,9 @@
         </body>
     </html>
         <hr />
-        @Html.ActionLink("Search for new Artists and Tracks to add to your playlists", "Index", "Artists")
+        <div class="container">
+            <p id="search">@Html.ActionLink("Search for new Artists and Tracks to add to your playlists", "Index", "Artists")</p>
+        </div>
         <br />
         <br />
 

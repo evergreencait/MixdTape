@@ -215,8 +215,8 @@ C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Controllers\AccountController.cs
 C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Controllers\ArtistsController.cs
 C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Controllers\PlaylistController.cs
 C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Controllers\PlaylistTracks.cs
-C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Migrations\20170516154614_initial.cs
-C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Migrations\20170516154614_initial.Designer.cs
+C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Migrations\20170717211638_Initial.cs
+C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Migrations\20170717211638_Initial.Designer.cs
 C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Models\ApplicationDbContext.cs
 C:\Users\Caitlin\Desktop\MixdTape\src\MixdTape\Models\ApplicationUser.cs
