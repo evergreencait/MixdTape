@@ -99,8 +99,14 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 #navbar {
+    margin-left: 80%;
+}
+
+#logout {
     float: right;
     margin-right: 1%;
+    margin-top: -2.5%;
+    margin-bottom: 1%;
 }
 
 .navbar-brand {
