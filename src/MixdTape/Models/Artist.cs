@@ -37,9 +37,9 @@ namespace MixdTape.Models
             return artistList;
         }
 
-        public static List<Artist> GetTracks(string secondArtist)
+        public static List<Artist> GetTracks(string clickedArtist)
         {
-            var client = new RestClient("http://www.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + secondArtist + "&api_key=" + EnvironmentVariables.LastFmKey + "&format=json");
+            var client = new RestClient("http://www.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + clickedArtist+ "&api_key=" + EnvironmentVariables.LastFmKey + "&format=json");
             var request = new RestRequest("", Method.GET);
             Console.WriteLine(request);
             var response = new RestResponse();

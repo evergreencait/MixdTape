@@ -17,7 +17,7 @@
                     $.ajax({
                         type: 'GET',
                         datatype: 'json',
-                        data: { artist: artist },
+                        data: $(this).serialize(),
                         url: 'Artists/GetTracks',
                         success: function (artist) {
                             console.log("artist" + artist);
