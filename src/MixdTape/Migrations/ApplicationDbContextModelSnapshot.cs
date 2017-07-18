@@ -179,8 +179,6 @@ namespace MixdTape.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Track");
-
                     b.Property<string>("UserId");
 
                     b.HasKey("ArtistId");

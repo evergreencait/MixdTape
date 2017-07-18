@@ -8,8 +8,8 @@ using MixdTape.Models;
 namespace MixdTape.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170718172813_Initial")]
-    partial class Initial
+    [Migration("20170718211846_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -179,8 +179,6 @@ namespace MixdTape.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
-
-                    b.Property<string>("Track");
 
                     b.Property<string>("UserId");
 

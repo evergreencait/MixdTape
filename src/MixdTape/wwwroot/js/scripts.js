@@ -9,7 +9,7 @@
             success: function (artists) {
 
                 for (var i = 0; i < artists.length; i++) {
-                    $('#search-result').append('<p class="clickedArtist">' + artists[i].name + '</p>');
+                    $('#search-result').append('<p class="clickedArtist">' + artists[i].name+ '</p>');
                 }
                 $(".clickedArtist").click(function () {
                     var artist = $(this).html();
