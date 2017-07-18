@@ -94,6 +94,19 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
     font-size: 40px;
 }
 
+.logout {
+    margin-top: 3%;
+}
+
+#navbar {
+    float: right;
+    margin-right: 1%;
+}
+
+.navbar-brand {
+   float: left !important;
+}
+
 
 #video-background{ 
   position: absolute;
