@@ -118,17 +118,3 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 
-#video-background{ 
-  position: absolute;
-  height: auto;
-  width: auto;
-  min-height: 100%;
-  min-width: 100%;
-  left: 50%;
-  top: 50%;
-  background-size: contain !important;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-  z-index: 1;
-}
-
