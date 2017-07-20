@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<MixdTape.Models.Mailing>
+
+<h2>Join Our Mailing List!</h2>
+<hr />
+
+
+@if (Model.Any())
+{
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h3>Email Addresses on Mailing List:</h3>
+        @foreach (var listPost in Model)
+        {
+            <li>@Html.DisplayFor(modelPost => listPost.Email)</li>
+
+        }
+    }
+}
+
+<p>@Html.ActionLink("Add your email address to the list", "Create")</p>
+

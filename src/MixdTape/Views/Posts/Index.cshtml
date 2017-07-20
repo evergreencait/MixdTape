@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<MixdTape.Models.Post>
+<div class="dock">
+    <h2 class="title">Mixd Tape</h2>
+</div>
+@if (Model.Any())
+{
+    @foreach (var listPost in Model)
+    {
+        <h2>@Html.DisplayFor(modelPost => listPost.Description)</h2>
+            <div class="postImg">
+                <img src="@Html.DisplayFor(modelProduct => listPost.ImagePath)" />
+            </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                <p>@Html.ActionLink("Edit", "Edit", new { id = listPost.Id })</p>
+
+            }
+    }
+}
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>@Html.ActionLink("Create new", "Create")</p>
+
+}

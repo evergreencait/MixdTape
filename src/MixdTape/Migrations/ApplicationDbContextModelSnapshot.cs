@@ -172,51 +172,30 @@ namespace MixdTape.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("MixdTape.Models.Artist", b =>
+            modelBuilder.Entity("MixdTape.Models.Mailing", b =>
                 {
-                    b.Property<int>("ArtistId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Email");
 
-                    b.Property<string>("UserId");
+                    b.HasKey("Id");
 
-                    b.HasKey("ArtistId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Artists");
-                });
-
-            modelBuilder.Entity("MixdTape.Models.Categories", b =>
-                {
-                    b.Property<int>("PostId");
-
-                    b.Property<int>("CategoryId");
-
-                    b.HasKey("PostId");
-
-                    b.HasIndex("PostId");
-
-                    b.ToTable("Categories");
+                    b.ToTable("Mailings");
                 });
 
             modelBuilder.Entity("MixdTape.Models.Post", b =>
                 {
-                    b.Property<int>("PostId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Description");
+                    b.Property<string>("Description");
 
-                    b.Property<string>("Genre");
+                    b.Property<string>("ImagePath");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Title");
 
-                    b.Property<string>("UserId");
-
-                    b.HasKey("PostId");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Posts");
                 });
@@ -256,28 +235,6 @@ namespace MixdTape.Migrations
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("MixdTape.Models.Artist", b =>
-                {
-                    b.HasOne("MixdTape.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("MixdTape.Models.Categories", b =>
-                {
-                    b.HasOne("MixdTape.Models.Post", "Post")
-                        .WithMany("Categories")
-                        .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("MixdTape.Models.Post", b =>
-                {
-                    b.HasOne("MixdTape.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
         }
     }

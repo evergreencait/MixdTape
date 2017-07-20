@@ -10,12 +10,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MixdTape.Controllers
 {
-    public class PostsController : Controller
+    public class MailingController : Controller
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public PostsController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+        public MailingController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
         {
             _userManager = userManager;
             _db = db;
@@ -23,7 +23,7 @@ namespace MixdTape.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(_db.Posts.ToList());
+            return View(_db.Mailings.ToList());
         }
 
         public IActionResult Create()
@@ -31,24 +31,11 @@ namespace MixdTape.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Post post)
+        public IActionResult Create(Mailing mailing)
         {
-            _db.Posts.Add(post);
+            _db.Mailings.Add(mailing);
             _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        public IActionResult Edit(int id)
-        {
-            var thisPost = _db.Posts.FirstOrDefault(items => items.Id == id);
-            return View(thisPost);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Post post)
-        {
-            _db.Entry(post).State = EntityState.Modified;
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Posts");
         }
     }
 }

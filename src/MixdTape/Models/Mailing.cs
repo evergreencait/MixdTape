@@ -7,12 +7,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MixdTape.Models
 {
-    [Table("Categories")]
-    public class Categories
+    [Table("Mailings")]
+    public class Mailing
     {
         [Key]
-        public int CategoryId { get; set; }
-        public int PostId { get; set; }
-        public virtual Post Post { get; set; }
+        public int Id { get; set; }
+        public string Email { get; set; }
+
     }
 }
