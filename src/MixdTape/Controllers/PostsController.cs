@@ -12,12 +12,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace MixdTape.Controllers
 {
     [Authorize]
-    public class PlaylistController : Controller
+    public class PostController : Controller
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public PlaylistController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+        public PostController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
         {
             _userManager = userManager;
             _db = db;
@@ -28,7 +28,7 @@ namespace MixdTape.Controllers
 
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
-            return View(_db.Playlists.Where(x => x.User.Id == currentUser.Id));
+            return View(_db.Posts.Where(x => x.User.Id == currentUser.Id));
         }
     }
 }

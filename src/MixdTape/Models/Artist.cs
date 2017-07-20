@@ -16,7 +16,6 @@ namespace MixdTape.Models
         public int ArtistId { get; set; }
         public string Name { get; set; }
 
-        public ICollection<PlaylistsTracks> PlaylistsTracks { get; set; }
         public virtual ApplicationUser User { get; set; }
 
         public static List<Artist> GetArtists(string artist)

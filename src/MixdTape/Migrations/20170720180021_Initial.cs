@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MixdTape.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -169,10 +169,10 @@ namespace MixdTape.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Playlists",
+                name: "Posts",
                 columns: table => new
                 {
-                    PlaylistId = table.Column<int>(nullable: false)
+                    PostId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<int>(nullable: false),
                     Genre = table.Column<string>(nullable: true),
@@ -181,9 +181,9 @@ namespace MixdTape.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Playlists", x => x.PlaylistId);
+                    table.PrimaryKey("PK_Posts", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_Playlists_AspNetUsers_UserId",
+                        name: "FK_Posts_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -191,26 +191,20 @@ namespace MixdTape.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PlaylistsTracks",
+                name: "Categories",
                 columns: table => new
                 {
-                    PlaylistId = table.Column<int>(nullable: false),
-                    ArtistId = table.Column<int>(nullable: false)
+                    PostId = table.Column<int>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PlaylistsTracks", x => new { x.PlaylistId, x.ArtistId });
+                    table.PrimaryKey("PK_Categories", x => x.PostId);
                     table.ForeignKey(
-                        name: "FK_PlaylistsTracks_Artists_ArtistId",
-                        column: x => x.ArtistId,
-                        principalTable: "Artists",
-                        principalColumn: "ArtistId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PlaylistsTracks_Playlists_PlaylistId",
-                        column: x => x.PlaylistId,
-                        principalTable: "Playlists",
-                        principalColumn: "PlaylistId",
+                        name: "FK_Categories_Posts_PostId",
+                        column: x => x.PostId,
+                        principalTable: "Posts",
+                        principalColumn: "PostId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -261,19 +255,14 @@ namespace MixdTape.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Playlists_UserId",
-                table: "Playlists",
+                name: "IX_Categories_PostId",
+                table: "Categories",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_UserId",
+                table: "Posts",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PlaylistsTracks_ArtistId",
-                table: "PlaylistsTracks",
-                column: "ArtistId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PlaylistsTracks_PlaylistId",
-                table: "PlaylistsTracks",
-                column: "PlaylistId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -294,16 +283,16 @@ namespace MixdTape.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "PlaylistsTracks");
+                name: "Artists");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Artists");
-
-            migrationBuilder.DropTable(
-                name: "Playlists");
+                name: "Posts");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
