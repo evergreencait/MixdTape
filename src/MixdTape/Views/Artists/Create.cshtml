@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MixdTape.Models.Artist
+
+<h2>Add an artist to your favorites</h2>
+<hr />
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("Back to List", "Index")

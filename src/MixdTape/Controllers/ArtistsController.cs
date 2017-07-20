@@ -6,10 +6,10 @@ using MixdTape.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MixdTape.Controllers
 {
-    [Authorize]
     public class ArtistsController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -21,9 +21,21 @@ namespace MixdTape.Controllers
             _db = db;
         }
 
-       public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Artist artist)
+        {
+            _db.Artists.Add(artist);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public IActionResult GetArtists(string searchedArtist)

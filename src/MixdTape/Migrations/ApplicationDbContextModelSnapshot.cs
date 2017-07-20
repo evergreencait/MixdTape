@@ -172,6 +172,22 @@ namespace MixdTape.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("MixdTape.Models.Artist", b =>
+                {
+                    b.Property<int>("ArtistId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("ArtistId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Artists");
+                });
+
             modelBuilder.Entity("MixdTape.Models.Mailing", b =>
                 {
                     b.Property<int>("Id")
@@ -235,6 +251,13 @@ namespace MixdTape.Migrations
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MixdTape.Models.Artist", b =>
+                {
+                    b.HasOne("MixdTape.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
         }
     }

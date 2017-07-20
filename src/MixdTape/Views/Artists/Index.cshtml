@@ -18,3 +18,9 @@
 
         </div>
 
+@if (User.Identity.IsAuthenticated)
+{
+    <p>@Html.ActionLink("Create new", "Create")</p>
+
+}
+

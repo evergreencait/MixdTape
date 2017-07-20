@@ -14,6 +14,8 @@ namespace MixdTape.Models
             base.OnModelCreating(builder);
         }
         public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Artist> Artists{ get; set; }
         public DbSet<Mailing> Mailings { get; set; }
     }
 }
