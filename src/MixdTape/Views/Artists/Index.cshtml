@@ -2,7 +2,6 @@
     ViewData["Title"] = "Mixd Tape";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Html.Partial("Create.cshtml")
 
 <form class="artist" action="GetArtists">
     <label>Artist name:</label>
@@ -24,3 +23,6 @@
     <p>@Html.ActionLink("Create new", "Create")</p>
 
 }
+
+<hr />
+@Html.Partial("Create.cshtml")
