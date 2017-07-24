@@ -92,8 +92,14 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 #search {
-    text-align: center;
     font-size: 40px;
+    border: 1px solid white;
+    width: 30%;
+    text-align: center;
+    background-color: #66CCCC;
+}
+#search a {
+    color: white;
 }
 
 .logout {
@@ -133,9 +139,15 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 .pitchfork {
-    padding-left: 10px;
+    float: right !important;
 }
 
 .body {
-    margin-left: 1% !important;
+    margin: auto !important;
 }
+
+#search a:hover {
+    text-decoration: none !important;
+    color: darkslategray;
+}
+
