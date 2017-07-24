@@ -177,6 +177,8 @@ namespace MixdTape.Migrations
                     b.Property<int>("ArtistId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ImgUrl");
+
                     b.Property<string>("Name");
 
                     b.Property<string>("UserId");

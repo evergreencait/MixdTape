@@ -182,6 +182,7 @@ namespace MixdTape.Migrations
                 {
                     ArtistId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImgUrl = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     UserId = table.Column<string>(nullable: true)
                 },

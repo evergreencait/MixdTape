@@ -8,7 +8,7 @@ using MixdTape.Models;
 namespace MixdTape.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170720201704_Initial")]
+    [Migration("20170724191734_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -177,6 +177,8 @@ namespace MixdTape.Migrations
                 {
                     b.Property<int>("ArtistId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ImgUrl");
 
                     b.Property<string>("Name");
 
