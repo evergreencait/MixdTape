@@ -152,7 +152,6 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
     color: darkslategray;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lemon);
 
 h1{
   font-family: 'Lemon', cursive;
@@ -163,7 +162,7 @@ h1{
   box-sizing:border-box;
   -moz-box-sizing:border-box;
 }
-.container{
+.post{
   width:80%;
   margin:0 auto;
   overflow:auto;
@@ -272,16 +271,16 @@ h1{
   .menu a,
   pre,
 .lightback{
-  background-color:#efefea;
+  background-color:white;
 }
 #MID,
 .mid{
-  color:#dbdbdb;
+  color:white;
 }
 #MIDBACK,
   .menu a:hover,
 .midback{
-  background-color:#dbdbdb;
+  background-color:white;
 }
 #DARK,
 a,

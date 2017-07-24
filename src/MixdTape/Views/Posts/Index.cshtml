@@ -12,11 +12,18 @@
     @foreach (var listPost in Model)
     {
 
-        <div class="container">
+        <div class="container post">
             <div class="skinny column lefty">
                 <div class="menu">
                     <nav>
                         <script class="pitchfork" type="text/javascript" src="http://output25.rssinclude.com/output?type=js&amp;id=1148492&amp;hash=aaca347b484c2164752f31d0d749fd7a"></script>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <p>@Html.ActionLink("Edit Post", "Edit", new { id = listPost.Id })</p>
+
+                        }
                     </nav>
                 </div>
             </div>
@@ -34,12 +41,7 @@
             </div>
 
         </div>
-            @if (User.Identity.IsAuthenticated)
-            {
-
-                <p>@Html.ActionLink("Edit", "Edit", new { id = listPost.Id })</p>
-
-            }
+        
     }
 }
 

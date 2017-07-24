@@ -11,12 +11,18 @@
 
     @Html.LabelFor(model => model.Title)
     @Html.EditorFor(model => model.Title)
+    <br />
+    <br />
 
     @Html.LabelFor(model => model.Description)
     @Html.TextAreaFor(model => model.Description)
+    <br />
+    <br />
 
     @Html.LabelFor(model => model.ImagePath)
     @Html.EditorFor(model => model.ImagePath)
+    <br />
+    <br />
     <input type="submit" value="Create" />
 }
 @Html.ActionLink("Back to List", "Index")
