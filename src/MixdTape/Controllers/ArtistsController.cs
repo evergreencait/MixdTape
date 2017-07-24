@@ -50,6 +50,20 @@ namespace MixdTape.Controllers
             return Json(allArtists);
         }
 
+        public IActionResult Edit(int id)
+        {
+            var thisArtist = _db.Artists.FirstOrDefault(items => items.ArtistId == id);
+            return View(thisArtist);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Artist artist)
+        {
+            _db.Entry(artist).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
 
 
 

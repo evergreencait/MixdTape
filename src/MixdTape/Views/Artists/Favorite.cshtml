@@ -6,6 +6,7 @@
 @model IEnumerable<MixdTape.Models.Artist>
 <div class="dock">
     <h2 class="title">Favorite Artists</h2>
+    <p>@Html.ActionLink("Add artists", "Create")</p>
 </div>
 @if (Model.Any())
 {
