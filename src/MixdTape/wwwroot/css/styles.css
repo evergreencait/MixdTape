@@ -61,35 +61,6 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
     border: 6px double purple;
 }
 
-.jumbotron{
-  position: relative;
-    overflow: hidden;
-    height: 60%;
-    background-color: white;
- 
-  /* Tried setting the height. Didnt work either */
-  /* height: 200px; */
-}
-.container {
-  position: relative;
-  color: black;
-  z-index: 2
-}
-
-.hello {
-    margin-top: 4%;
-    margin-left: 10%;
-    color: white;
-    width: 50%;
-    height: 80%;
-    text-align: center;
-}
-
-#hello {
-    font-size: 50px;
-    padding-bottom: 2%;
-    
-}
 
 #search {
     font-size: 40px;
@@ -124,7 +95,6 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 
-<<<<<<< HEAD
 #video-background{ 
   position: absolute;
   height: auto;
@@ -147,6 +117,15 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
     margin: auto !important;
 }
 
+.dock {
+    margin-top: 10% !important;
+    text-align: center;
+}
+
+#docktitle {
+    font-size: 50px;
+}
+
 #search a:hover {
     text-decoration: none !important;
     color: darkslategray;
@@ -163,8 +142,8 @@ h1{
   -moz-box-sizing:border-box;
 }
 .post{
+  margin-top: 5% !important;
   width:80%;
-  margin:0 auto;
   overflow:auto;
   padding:2em;
 }
@@ -256,11 +235,6 @@ h1{
   text-decoration:none;
 }
 /*COLORS AND PATTERNS*/
-#WHITEBACK,
-  .container,
-.whiteback{
-  background-color:#fff;
-}
 #LIGHT,
 .light{
   color:#efefea;
@@ -289,14 +263,14 @@ a,
 }
 @media only screen and (min-width : 321px) and (max-width : 1024px)
     {
-  .container{
+  .port{
     width:100%;
   }
 }
 @media 
   screen and (orientation : portrait),
   screen and (max-width : 600px){
-  .container {
+  .port {
     width:100%; 
     padding:0;
   }
@@ -331,4 +305,34 @@ a,
     width:100%;
     text-align:center;
   }
+}
+
+.hello {
+    margin-top: 4%;
+    margin-left: 10%;
+    color: white;
+    width: 50%;
+    height: 80%;
+    text-align: center;
+}
+
+.jumbotron{
+  position: relative;
+    overflow: hidden;
+    height: 60%;
+    background-color: white;
+ 
+  /* Tried setting the height. Didnt work either */
+  /* height: 200px; */
+}
+.container {
+  position: relative;
+  color: black;
+  z-index: 2
+}
+
+#hello {
+    font-size: 50px;
+    padding-bottom: 2%;
+    
 }
