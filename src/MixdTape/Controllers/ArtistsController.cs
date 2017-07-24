@@ -30,6 +30,12 @@ namespace MixdTape.Controllers
         {
             return View();
         }
+
+        public IActionResult Favorite()
+        {
+            return View(_db.Artists.ToList());
+        }
+
         [HttpPost]
         public IActionResult Create(Artist artist)
         {
