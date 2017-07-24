@@ -23,7 +23,7 @@ namespace MixdTape.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View();
+            return View(_db.Artists.ToList());
         }
 
         public IActionResult Create()
