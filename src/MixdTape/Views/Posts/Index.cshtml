@@ -11,10 +11,29 @@
 {
     @foreach (var listPost in Model)
     {
-        <h2>@Html.DisplayFor(modelPost => listPost.Description)</h2>
-            <div class="postImg">
-                <img src="@Html.DisplayFor(modelProduct => listPost.ImagePath)" />
+
+        <div class="container">
+            <div class="skinny column lefty">
+                <div class="menu">
+                    <nav>
+                        <script class="pitchfork" type="text/javascript" src="http://output25.rssinclude.com/output?type=js&amp;id=1148492&amp;hash=aaca347b484c2164752f31d0d749fd7a"></script>
+                    </nav>
+                </div>
             </div>
+
+            <div class="fat column righty">
+
+                <div class="content">
+                    <div class="header-image">
+                        <img src="@Html.DisplayFor(modelProduct => listPost.ImagePath)" />
+                    </div>
+                    <h2>@Html.DisplayFor(modelPost => listPost.Title)</h2>
+                    <p>@Html.DisplayFor(modelPost => listPost.Description)</p>
+ 
+                </div>
+            </div>
+
+        </div>
             @if (User.Identity.IsAuthenticated)
             {
 
@@ -24,15 +43,6 @@
     }
 }
 
-<div class="panel">
-    <div class="pitchfork">
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-            <div class="list-group">
-                <script class="pitchfork" type="text/javascript" src="http://output25.rssinclude.com/output?type=js&amp;id=1148492&amp;hash=aaca347b484c2164752f31d0d749fd7a"></script>
-            </div>
-        </div><!--/.sidebar-offcanvas-->
-    </div>
-</div><!--/row-->
 
 
 @if (User.Identity.IsAuthenticated)
