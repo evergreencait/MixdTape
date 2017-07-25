@@ -355,7 +355,8 @@ a,
 }
 
 .mail {
-    margin-top: 10% !important;
+    margin-top:5% !important;
+    background-color: purple !important;
 }
 
 
@@ -372,3 +373,13 @@ a,
     font-size: 15px;
 }
 
+#local {
+    text-align: center !important;
+    font-size: 50px;
+    border-bottom: 4px solid purple;
+}
+
+#mailhead {
+    margin-top: 10% !important;
+    text-align: center;
+}
