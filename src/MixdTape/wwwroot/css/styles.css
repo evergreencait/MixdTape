@@ -349,32 +349,6 @@ a,
     margin-top: 10% !important;
 }
 
-.flex-grid {
-  display: flex;
-}
-.flex-grid .col {
-  flex: 1;
-}
-.flex-grid-thirds {
-  display: flex;
-  justify-content: space-between;
-}
-.flex-grid-thirds .col {
-  width: 32%;
-}
-
-@media (max-width: 400px) {
-    .flex-grid,
-    .flex-grid-thirds {
-        display: block;
-    }
-    .col {
-      width: 50%;
-      margin: 0 0 10px 0;
-    }
-  }
-
-
 
 #favimg {
     height: 300px;
@@ -383,3 +357,5 @@ a,
 .modal-body {
     height: 100%;
 }
+
+.box { width: 300px; float: left; height:25px;}

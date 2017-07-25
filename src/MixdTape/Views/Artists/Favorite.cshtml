@@ -8,31 +8,34 @@
     <h2 class="title">Favorite Artists</h2>
     <p>@Html.ActionLink("Add artists", "Create")</p>
 </div>
-<div class="flex-grid">
 
-    @if (Model.Any())
+@{
+    ViewBag.Title = "Home Page";
+    int counter = 0;
+}
+
+<div class="row">
+@if (Model.Any())
+{
+    @foreach (var article in Model)
     {
-        @foreach (var listPost in Model)
+        if (counter != 0 && counter % 3 == 0)
         {
-            <div class="flex-grid-thirds">
-                <div class="col">
-                    <h2>@Html.DisplayFor(modelPost => listPost.Name)</h2>
-                    <div class="postImg">
-                        <img src="@Html.DisplayFor(modelProduct => listPost.ImgUrl)" id="favimg" />
-                    </div>
-                    @if (User.Identity.IsAuthenticated)
-                    {
+            @:</div>
+        @:<div class="row">
+    }
 
-                        <p>@Html.ActionLink("Edit", "Edit", new { id = listPost.ArtistId })</p>
-
-                    }
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="@article.ImgUrl" data-holder-rendered="true" style="height: 400px; width: 100%; display: block;">
+                <div class="caption">
+                    <h3 id="thumbnail-label">@article.Name</h3>
                 </div>
             </div>
-        }
+        </div>
+
+        counter++;
     }
+}
 </div>
 
-    
-
-
- 
