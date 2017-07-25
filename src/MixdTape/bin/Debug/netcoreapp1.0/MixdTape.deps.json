@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "96cd4db9c2237920eb54c956fa308ae97296f489"
+    "signature": "c5b6e177fa83a91e2489c2416b380d7e453c80c7"
   },
   "compilationOptions": {
     "defines": [
@@ -17,6 +17,7 @@
       "MixdTape/1.0.0": {
         "dependencies": {
           "bootstrap": "3.3.7",
+          "Magnific.Popup": "1.1.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
@@ -46,6 +47,11 @@
         }
       },
       "jQuery/1.9.1": {},
+      "Magnific.Popup/1.1.0": {
+        "dependencies": {
+          "jQuery": "1.9.1"
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore.DataProtection": "1.0.0",
@@ -3822,6 +3828,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-HiX9icLyiJGgiL5EOIn0d1MBPHVV2M9mzWT4mANdniDNR51RvAFTyKEXEd2+5yQJ4PJ5xePOR61Vjj/omQzYcw=="
+    },
+    "Magnific.Popup/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uLPVovZ/979S8cTMSfoPQnYodFjvqZvZ9lvN8xLQGgqEucmFrLSj8chfbf4V7dGoWRwAyt92gaBCPbJJ//QSjg=="
     },
     "Microsoft.AspNetCore.Antiforgery/1.0.1": {
       "type": "package",

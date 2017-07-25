@@ -1,5 +1,7 @@
-﻿$(document).ready(function () {
+﻿ 
+$(document).ready(function () {
     $('.artist').submit(function (event) {
+        $("#myModal").modal({ show: true });
         event.preventDefault();
         $.ajax({
             type: 'GET',
@@ -7,7 +9,6 @@
             data: $(this).serialize(),
             url: 'Artists/GetArtists',
             success: function (artists) {
-
                 for (var i = 0; i < artists.length; i++) {
                     $('#search-result').append('<p class="clickedArtist">' + artists[i].name+ '</p>');
                 }

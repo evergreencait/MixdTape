@@ -380,3 +380,6 @@ a,
     height: 300px;
 }
 
+.modal-body {
+    height: 100%;
+}

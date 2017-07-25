@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "49cf89cd6167c3eabf97677025f5a085da6217d9"
+    "signature": "e4b40c0f84401c95f7038234dbeb34e982ecdde7"
   },
   "compilationOptions": {
     "defines": [
@@ -17,6 +17,7 @@
       "MixdTape/1.0.0": {
         "dependencies": {
           "bootstrap": "3.3.7",
+          "Magnific.Popup": "1.1.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
@@ -46,6 +47,11 @@
       "Libuv/1.9.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Magnific.Popup/1.1.0": {
+        "dependencies": {
+          "jQuery": "1.9.1"
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
@@ -2892,6 +2898,7 @@
       "MixdTape/1.0.0": {
         "dependencies": {
           "bootstrap": "3.3.7",
+          "Magnific.Popup": "1.1.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
@@ -2921,6 +2928,11 @@
       "Libuv/1.9.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Magnific.Popup/1.1.0": {
+        "dependencies": {
+          "jQuery": "1.9.1"
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.0.1": {
@@ -5688,6 +5700,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-0wRz5edgJTdPdGrLSIlM+kjHfQ6Khr/QrYLKkuHzjLYEZu5av1kvCPkXCqBhwUM19neBuHM16q0f/8YMun+2Lg=="
+    },
+    "Magnific.Popup/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uLPVovZ/979S8cTMSfoPQnYodFjvqZvZ9lvN8xLQGgqEucmFrLSj8chfbf4V7dGoWRwAyt92gaBCPbJJ//QSjg=="
     },
     "Microsoft.AspNetCore.Antiforgery/1.0.1": {
       "type": "package",
