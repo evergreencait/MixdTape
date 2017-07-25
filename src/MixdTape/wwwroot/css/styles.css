@@ -118,7 +118,8 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 .dock {
-    margin-top: 10% !important;
+    margin-top: 5% !important;
+    margin-bottom: 3%;
     text-align: center;
 }
 
@@ -342,7 +343,8 @@ a,
 }
 
 .artist {
-    padding-top: 14% !important;
+    padding-top: 8% !important;
+    padding-bottom: 5%;
     text-align: center;
     background-color: purple;
     color: white;
