@@ -342,7 +342,10 @@ a,
 }
 
 .artist {
-    margin-top: 10% !important;
+    padding-top: 14% !important;
+    text-align: center;
+    background-color: purple;
+    color: white;
 }
 
 .mail {
@@ -358,4 +361,8 @@ a,
     height: 100%;
 }
 
-.box { width: 300px; float: left; height:25px;}
+#artistname {
+    font-family: inherit;
+    font-size: 15px;
+}
+
