@@ -3,26 +3,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model MixdTape.Models.Post
+<div class="create">
+    <h2 id="createpost">Add a new post to the landing page</h2>
+    <div class="container">
+        <div class="createpost">
+            @using (Html.BeginForm())
+            {
+                <div class="form">
+                    <div class="form-group">
 
-<h2>Add a new post to the landing page</h2>
-<hr />
-@using (Html.BeginForm())
-{
+                        @Html.LabelFor(model => model.Title)
+                        @Html.EditorFor(model => model.Title)
+                        <br />
+                        <br />
 
-    @Html.LabelFor(model => model.Title)
-    @Html.EditorFor(model => model.Title)
-    <br />
-    <br />
+                        @Html.LabelFor(model => model.Description)
+                        @Html.TextAreaFor(model => model.Description)
+                        <br />
+                        <br />
 
-    @Html.LabelFor(model => model.Description)
-    @Html.TextAreaFor(model => model.Description)
-    <br />
-    <br />
-
-    @Html.LabelFor(model => model.ImagePath)
-    @Html.EditorFor(model => model.ImagePath)
-    <br />
-    <br />
-    <input type="submit" value="Create" />
-}
-@Html.ActionLink("Back to List", "Index")
+                        @Html.LabelFor(model => model.ImagePath)
+                        @Html.EditorFor(model => model.ImagePath)
+                        <br />
+                        <br />
+                        <input type="submit" value="Create" class="btn btn-warning" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
