@@ -4,21 +4,31 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Edit</h2>
-<hr />
-<h4>Edit this artist: @Html.DisplayFor(model => model.Name)</h4>
 
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.ArtistId)
+<div class="create">
+    <div class="container">
+        <div class="createpost">
+            @using (Html.BeginForm())
+            {
+                <div class="form">
+                    <div class="form-group">
+                        <h2>Edit</h2>
+                        <hr />
+                        <h4>Edit this artist: @Html.DisplayFor(model => model.Name)</h4>
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+                       @Html.HiddenFor(model => model.ArtistId)
 
-    @Html.LabelFor(model => model.ImgUrl)
-    @Html.EditorFor(model => model.ImgUrl)
+                    @Html.LabelFor(model => model.Name)
+                    @Html.EditorFor(model => model.Name)
 
-
-    <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("Back to list", "Index")</p>
+                    @Html.LabelFor(model => model.ImgUrl)
+                    @Html.EditorFor(model => model.ImgUrl)
+                        <br />
+                        <br />
+                        <input type="submit" value="Save" class="btn btn-warning" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -30,6 +30,7 @@
                 <img src="@article.ImgUrl" data-holder-rendered="true" style="height: 400px; width: 100%; display: block;">
                 <div class="caption">
                     <h3 id="thumbnail-label">@article.Name</h3>
+                    <p>@Html.ActionLink("Edit", "Edit", new { id = article.ArtistId })</p>
                 </div>
             </div>
         </div>

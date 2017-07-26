@@ -4,17 +4,29 @@
 }
 @model MixdTape.Models.Artist
 
-<h2>Add an artist to your favorites</h2>
-<hr />
-@using (Html.BeginForm())
-{
+<div class="create">
+    <h2 id="createpost">Add an artist to your favorites</h2>
+    <div class="container">
+        <div class="createpost">
+            @using (Html.BeginForm())
+            {
+                <div class="form">
+                    <div class="form-group">
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+                        @Html.LabelFor(model => model.Name)
+                        @Html.EditorFor(model => model.Name)
+                        <br />
+                        <br />
 
-    @Html.LabelFor(model => model.ImgUrl)
-    @Html.EditorFor(model => model.ImgUrl)
 
-    <input type="submit" value="Create" />
-}
-@Html.ActionLink("Back to List", "Index")
+                        @Html.LabelFor(model => model.ImgUrl)
+                        @Html.EditorFor(model => model.ImgUrl)
+                        <br />
+                        <br />
+                        <input type="submit" value="Create" class="btn btn-warning" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
