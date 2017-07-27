@@ -1,0 +1,409 @@
+﻿  .login {
+    position: absolute;
+    z-index: 1;
+    margin-top: -33%;
+    text-align: center;
+    border-radius: 20%;
+    width: 35%;
+    padding: 150px;
+    margin-left: 32%;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
+box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
+    font-family: font-family: 'Rock Salt', cursive;
+
+}
+
+.loginbody {
+    background-image: url("https://images.pexels.com/photos/159376/turntable-top-view-audio-equipment-159376.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+    background-size: cover;
+    height: 100vh;
+    -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+    
+}
+
+.loginTitle {
+    font-family:'Rock Salt', cursive;
+    color: gray;
+    font-size: 40px;
+    margin-top: -10px;
+}
+
+.secondTitle {
+    font-family:'Rock Salt', cursive;
+    color: gray;
+    font-size: 10px;
+}
+
+#profile {
+    font-size: 40px;
+
+}
+
+.profile-heading {
+    margin-left: 35%;
+}
+
+.list-group-item active {
+    background-color: black;
+    color: white;
+}
+
+#rock {
+    margin-left: 39%;
+    padding: 1%;
+    height: 200px;
+    border: 6px double purple;
+}
+
+
+#search {
+    font-size: 40px;
+    border: 1px solid white;
+    width: 30%;
+    text-align: center;
+    background-color: #66CCCC;
+}
+#search a {
+    color: white;
+}
+
+.logout {
+    margin-top: 3%;
+}
+
+#navbar {
+    margin-left: 60%;
+    padding-top: 1%;
+    font-size: 20px;
+}
+
+
+.navbar-brand {
+   float: left !important;
+   font-family:'Rock Salt', cursive;
+   font-size: 35px;
+   color: white !important;
+   padding-top: 2%;
+   padding-bottom: 3%;
+   
+}
+
+
+#video-background{ 
+  position: absolute;
+  height: auto;
+  width: auto;
+  min-height: 100%;
+  min-width: 100%;
+  left: 50%;
+  top: 50%;
+  background-size: contain !important;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+
+.pitchfork {
+    float: right !important;
+}
+
+.body {
+    margin: auto !important;
+}
+
+.dock {
+    margin-top: 8% !important;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+#docktitle {
+    font-size: 50px;
+}
+
+#search a:hover {
+    text-decoration: none !important;
+    color: darkslategray;
+}
+
+
+h1{
+  font-family: 'Lemon', cursive;
+  font-size:2rems;
+}
+/*STRUCTURAL ELEMENTS*/
+*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+.post{
+  margin-top: 5% !important;
+  width:80%;
+  overflow:auto;
+  padding:2em;
+  background-color:#BDA0CB;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.skinny{
+  width:20%;
+}
+.fat{
+  width:75%;  
+}
+/*BOXES AND POSITIONS*/
+#LEFTY,
+.lefty{
+  float:left;
+}
+#RIGHTY,
+.righty{
+  float:right;
+}
+#CLEARLY,
+  footer,
+.clearly{
+  clear:both;
+}
+#BLOCKUP,
+  .menu a,
+.blockup{
+  display:block;
+  padding:.5em;
+}
+#LINEUP,
+  pre,
+.lineup{
+  display:inline;
+}
+#NOBOX,
+  body,
+.nobox{
+  padding:0;
+  margin:0;
+}
+#PADDY,
+  footer,
+.paddy{
+  padding:1em;
+}
+#MARGE,
+.marge{
+  margin:1em;
+}
+#MARGE-BOT,
+  header,
+.marge-bot{
+  margin-bottom:1em;
+}
+#ROUND,
+  .logo,
+.round{
+  border-radius:50%;
+}
+#IMAGESTRETCH,
+  header img,
+  .header-image img,
+.imagestretch{
+  width:80%;
+}
+/*TYPOGRAPHIC STYLES*/
+#NORMALTEXT,
+  .container,
+.normaltext{
+  font-family:Arial, sans-serif;
+  line-height:1.2;
+  color:#444;
+}
+#EMBOLDENED,
+  a,
+.emboldened{
+  font-weight:bold;
+}
+#STRIPPEDLIST,
+  .menu ul,
+.strippedlist{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+#STRIPPEDLINKS,
+  .menu a,
+.strippedlinks{
+  text-decoration:none;
+}
+/*COLORS AND PATTERNS*/
+#LIGHT,
+.light{
+  color:#efefea;
+}
+#LIGHTBACK,
+  body,
+  footer,
+  .menu a,
+  pre,
+.lightback{
+  background-color:white;
+}
+#MID,
+.mid{
+  color:white;
+}
+#MIDBACK,
+  .menu a:hover,
+.midback{
+  background-color:white;
+}
+#DARK,
+a,
+.dark{
+  color:#444;
+}
+@media only screen and (min-width : 321px) and (max-width : 1024px)
+    {
+  .port{
+    width:100%;
+  }
+}
+@media 
+  screen and (orientation : portrait),
+  screen and (max-width : 600px){
+  .port {
+    width:100%; 
+    padding:0;
+  }
+  
+  #PADDY,
+  header,
+  .content,
+.paddy{
+  padding:1em;
+}
+
+  #BLOCKUP,
+    .skinny,
+    .fat,
+  .blockup{
+    display:block;
+  }
+  .lefty, .righty{
+    float:none;
+    clear:both;
+  }
+  #FULLSTRETCH,
+    .skinny,
+    .fat,
+    .column img,
+  .fullstretch{
+  width:100%;
+}
+  .menu{
+    position:absolute;
+    top:0;
+    width:100%;
+    text-align:center;
+  }
+}
+
+.hello {
+    margin-top: 4%;
+    margin-left: 10%;
+    color: white;
+    width: 50%;
+    height: 80%;
+    text-align: center;
+}
+
+.jumbotron{
+  position: relative;
+    overflow: hidden;
+    height: 60%;
+    background-color: white;
+ 
+  /* Tried setting the height. Didnt work either */
+  /* height: 200px; */
+}
+.container {
+  position: relative;
+  color: black;
+  z-index: 2
+}
+
+#hello {
+    font-size: 50px;
+    padding-bottom: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+     background: rgba(0, 0, 0, 0.4);
+     width: 92%;
+     padding-top: 1%;
+}
+
+.artist {
+    padding-top: 8% !important;
+    padding-bottom: 5%;
+    text-align: center;
+    background-color: purple;
+    color: white;
+}
+
+.mail {
+    margin-top:5% !important;
+    background-color: purple !important;
+}
+
+
+#favimg {
+    height: 300px;
+}
+
+.modal-body {
+    height: 100%;
+}
+
+#artistname {
+    font-family: inherit;
+    font-size: 15px;
+}
+
+#local {
+    text-align: center !important;
+    font-size: 50px;
+    border-bottom: 4px solid purple;
+}
+
+#mailhead {
+    margin-top: 10% !important;
+    text-align: center;
+}
+
+.createpost {
+    border: 1px solid white;
+    width: 100%;
+    text-align: center;
+    padding: 7%;
+    margin-top: 10%;
+    background:rgba(255,255,255, 0.5); 
+    -webkit-box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
+}
+
+#createpost {
+    padding-top: 10%;
+    color: white;
+    text-align: center;
+}
+
+.create {
+    background-color: purple;
+    height: 100vh;
+
+}

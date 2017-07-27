@@ -6,15 +6,21 @@
 
 @model LoginViewModel
 
-<h2>Log in with your account</h2>
-<hr />
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.UserName)
-    @Html.TextBoxFor(m => m.UserName)
+<div class="loginbody">
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
 
-    <input type="submit" value="Log in" class="btn btn-default" />
-}
+</div>
+<div class="login">
+    <h1 class="loginTitle">Mixd Tape</h1>
+    <h4 class="secondTitle">Please sign in</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName)
+
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+
+        <input type="submit" value="Log in" class="btn btn-default" />
+    }
+</div>
