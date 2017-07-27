@@ -412,7 +412,7 @@ a,
     text-align: center;
     padding: 7%;
     margin-top: 10%;
-    background:rgba(255,255,255, 0.5); 
+    background:rgba(255,255,255, 0.6); 
     -webkit-box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
@@ -425,7 +425,8 @@ box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
 }
 
 .create {
-    background-color: purple;
+     background-image: url("https://images.pexels.com/photos/159376/turntable-top-view-audio-equipment-159376.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+    background-size: cover;
     height: 100vh;
 
 }
