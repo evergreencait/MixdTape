@@ -127,12 +127,18 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
     float: right !important;
 }
 
+.mainbody {
+background-image: url("http://wallsev.com/wp-content/uploads/2014/01/crumpled-white_00247448.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+}
+
 .body {
     margin-top: 5%;
     text-align: center;
     border: 2px dashed black;
     padding-left: 2%;
-    background-color: #D3D3D3;
+    background-color:rgba(128,0,128, 0.5);
     color: white;
       -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -140,7 +146,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .dock {
-    margin-top: 8% !important;
+    padding-top: 8% !important;
     margin-bottom: 3%;
     text-align: center;
 }
@@ -406,6 +412,10 @@ a,
     text-align: center;
 }
 
+.mail {
+    border: 1px solid black;
+}
+
 .createpost {
     border: 1px solid white;
     width: 100%;
@@ -429,4 +439,13 @@ box-shadow: 10px 10px 41px 0px rgba(0,0,0,0.75);
     background-size: cover;
     height: 100vh;
 
+}
+
+.mailbody {
+    background-image: url("https://images.pexels.com/photos/159376/turntable-top-view-audio-equipment-159376.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    margin-top: 10%;
 }
