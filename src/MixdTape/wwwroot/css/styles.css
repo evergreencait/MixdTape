@@ -361,7 +361,8 @@ a,
 
 
 #favimg {
-    height: 300px;
+    height: 200px;
+    width: 200px;
 }
 
 .modal-body {
