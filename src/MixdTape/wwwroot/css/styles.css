@@ -41,12 +41,25 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 #profile {
-    font-size: 40px;
+    font-size: 60px;
+   font-family: Verdana;
+    color: white;
 
+
+}
+
+.profile {
+    background-color: #B0E0E6;
+    height: 100%;
+}
+
+.jumbotron {
+    padding-bottom: 10%;
 }
 
 .profile-heading {
     margin-left: 35%;
+    padding-top: -10% !important;
 }
 
 .list-group-item active {
@@ -55,10 +68,11 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 #rock {
-    margin-left: 39%;
+    margin-left: 35%;
     padding: 1%;
     height: 200px;
-    border: 6px double purple;
+    border-radius: 50%;
+   
 }
 
 
@@ -114,7 +128,15 @@ box-shadow: 0px -1px 33px 0px rgba(0,0,0,0.75);
 }
 
 .body {
-    margin: auto !important;
+    margin-top: 5%;
+    text-align: center;
+    border: 2px dashed black;
+    padding-left: 2%;
+    background-color: #D3D3D3;
+    color: white;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .dock {
@@ -377,7 +399,6 @@ a,
 #local {
     text-align: center !important;
     font-size: 50px;
-    border-bottom: 4px solid purple;
 }
 
 #mailhead {
